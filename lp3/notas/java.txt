@@ -1,0 +1,5 @@
+# Guia de estudos:
+
+1) Entrada e saída de dados.
+2) Vetores/Arrays.
+3) Funções.
