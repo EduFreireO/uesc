@@ -15,7 +15,7 @@ Reta:: Reta(double angular, double linear, double independete)
     {
         this -> angular = angular;
         this -> linear = linear;
-    }
+    }   
 }
 
 Reta :: bool horizontal()
