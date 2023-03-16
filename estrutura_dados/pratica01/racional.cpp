@@ -5,13 +5,6 @@ class Racional
 {
     private:
         int num, den;
-        
-        int mdc(int a, int b)
-        {
-        if(!b) return a;
-        return mdc(b, a % b);
-        }
-    
     public:
         Racional(int num, int den)
         {
