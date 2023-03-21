@@ -5,12 +5,11 @@ int verify(vector <int> &v, int m, int n, int l)
 {
     if((m * 100) % l) return INT_MAX;
     
-    l = (l / 100);
-    if(!l) return INT_MAX;
-    int slots = m / l;
+    
+    int slots = (m * 100) / l;
     int begin = 0, end = v.size() - 1;
     int result = 0;
-    while(begin != end && slots)
+    while(end > begin && slots)
     {
         if(v[end] == n)
         {
