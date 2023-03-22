@@ -14,21 +14,21 @@ int main()
     while(number_operations--)
     {
         cin >> operation;
-            /*Que coisa feia cara. Tava uma merda, mas funcionava agora tudo cagado*/
+            
 
 
-        if(operation == "PUSH") cin >> value;    
+        if(operation == "PUSH") cin >> value; //Preciso consertar essa linha
         if(operation == "PUSH" && d.empty())
         {
             bag.push(value); d.push_back(value);
         }
         else if(operation == "PUSH" && d.front() >= value)
         {
-            bag.push(value); d.push_front(value);
+            bag.push(value); d.push_front(value); // Coloco o presente de menor valor no topo do deque
         }
         else if(operation == "PUSH")
         {
-            bag.push(value); d.push_back(value);
+            bag.push(value); d.push_back(value); // Coloco o ultimo presente na bag
         }     
         
         else if((operation == "MIN" || operation == "POP" ) && bag.empty())
