@@ -9,15 +9,17 @@ int verify(vector <int> &v, int m, int n, int l)
     int slots = (m * 100) / l;
     int begin = 0, end = v.size() - 1;
     int result = 0;
-    while(end > begin && slots)
+    while(end >= begin && slots)
     {
-        if(v[end] == n)
+        
+         
+         if(v[end] == n)
         {
             end--;
             slots--;
             result++;
         }
-        else if(v[begin] + v[end] == n)
+        else if(v[begin] + v[end] == n && begin != end) 
         {    
             begin++; end--;
             slots--;
