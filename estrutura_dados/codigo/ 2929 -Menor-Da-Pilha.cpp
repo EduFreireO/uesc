@@ -9,7 +9,8 @@ int main()
     string operation;
     cin >> number_operations;
 
-    
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     
     while(number_operations--)
     {
@@ -17,20 +18,18 @@ int main()
             
 
 
-        if(operation == "PUSH") cin >> value; //Preciso consertar essa linha
-        if(operation == "PUSH" && d.empty())
+        if(operation == "PUSH")  //Preciso consertar essa linha
         {
-            bag.push(value); d.push_back(value);
+            cin >> value;
+            bag.push(value);
+            
+            if(operation == "PUSH" && d.empty())
+                d.push_back(value);
+            else if(operation == "PUSH" && d.front() >= value)
+                d.push_front(value); // Coloco o presente de menor valor no topo do deque
+            else if(operation == "PUSH")
+                d.push_back(value); // Coloco o ultimo presente na bag 
         }
-        else if(operation == "PUSH" && d.front() >= value)
-        {
-            bag.push(value); d.push_front(value); // Coloco o presente de menor valor no topo do deque
-        }
-        else if(operation == "PUSH")
-        {
-            bag.push(value); d.push_back(value); // Coloco o ultimo presente na bag
-        }     
-        
         else if((operation == "MIN" || operation == "POP" ) && bag.empty())
             cout << "EMPTY" << endl;
         else if(operation == "MIN")

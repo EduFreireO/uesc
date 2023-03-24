@@ -4,6 +4,10 @@ using namespace std;
 int main()
 {
     auto x = 0; 
-    while(cin >> x)
-    cout << x;
+    
+    for(int i = 0; i <= 300; i++)
+    {
+        cin >> x;
+        cout << x << endl;
+    }
 }
