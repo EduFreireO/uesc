@@ -2,6 +2,8 @@
 .swp
 *.txt
 /beeCrowd/a.out
+/beeCrowd/.vscode
 /linguagem_prog3/codigo/*.class
 uesc/linguagem_prog3/beecrowd/*.class
 /home/eduardo/desktop/uesc/estrutura_dados/pratica01/a.out
+*.pdf
