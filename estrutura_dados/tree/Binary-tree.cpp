@@ -1,85 +1,41 @@
 #include <bits/stdc++.h>
+#define QTD 10
 using namespace std;
 
 
-class Node
+struct Node
 {
-    public:
-    
-    Node *left, *right;
-    int data;
-    
-    Node(int data)
-    {
-        this-> data = data;
-        left = nullptr;
-        right = nullptr;
-    }
+	int v;
+	Node *left, *right;
 };
+typedef Node* BTree;
 
-class BTree
+void makeNode(BTree &tree, int value)
 {
-    public:
-        Node *root;
-        int size = 0;
-        BTree():  root(nullptr), size(0){}
-        void addNode(int value)
-        {
-            Node *new_node = new Node(value);
-            if(root == nullptr)
-                root = new_node;
-            else
-            {
-                Node *node = root, *parent;
-                while(true)
-                {   
-                    parent = node;
-                    if(node -> data > value )
-                    {    
-                        node = node -> left;
-                        if(node == nullptr) 
-                        {
-                            parent -> left = new_node;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        node = node -> right;
-                        if(node == nullptr)
-                        {
-                            parent -> right = node;
-                            break;
-                        }
-                    }       
-                }
-                
+	tree = new Node();
+	tree -> v = value;
+	tree -> left = tree -> right = NULL; 
+}
 
-            }    
-        }
-        void preOrderTraversal(Node *node)
-        {
-            if(node != nullptr)
-            {
-                cout << node -> data << " ";
-                preOrderTraversal(node -> left);
-                preOrderTraversal(node -> right);
-            }
-        }
-};
+void insert(BTree &tree, int value)
+{
+	if(tree == NULL)
+		makeNode(tree, value);
+	else
+	{
+		if(value > tree -> v)
+			insert(tree -> right, value);
+		else
+			insert(tree -> left, value);	
 
-int main() {
-  BTree tree;
-  
-  tree.addNode(50);
-  tree.addNode(25);
-  tree.addNode(75);
-  tree.addNode(12);
-  tree.addNode(37);
-  tree.addNode(43);
-  tree.addNode(30);
-  
-  tree.preOrderTraversal(tree.root);
-  
-  return 0;
+	}
+}
+
+void dfs(BTree tree)
+{
+	// Processa Node
+	if(tree == NULL)
+		return;
+	dfs(tree -> left);
+	dfs(tree -> right);	
 }
