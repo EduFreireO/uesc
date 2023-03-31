@@ -1,0 +1,15 @@
+# Algoritmo de distância mínima.
+
+° Funciona para todos os tipos de grafo. Entretanto, é necessário ter cuidado
+com os grafos que possuem ciclos negativos.
+
+Funcionamento:
+1) Vamos primeiramente imaginar que a distância do nó de inicio até todos os
+outros vértices do grafo é infinito.
+
+2) Nosso objetivo é encontrar caminhos para diminuir a distância ao máximo.
+
+3) O algoritmo consiste em (vértices - 1) passagens por toda nossa lista
+de adjacência. (vertices - 1)-> Já podemos assegurar que a distância do nosso
+nó de partida a ele mesmo é 0.
+ 

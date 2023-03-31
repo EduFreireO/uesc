@@ -3,7 +3,7 @@ using namespace std;
 
 int not_grt(vector <int> &v, int n)
 {
-    int l = 0, r = v.size() - 1, mid = (l + r) / 2;
+    int l = -1, r = v.size(), mid = (l + r)/2;
     while(r - l > 1)
     {
         if(n >= v[l])
