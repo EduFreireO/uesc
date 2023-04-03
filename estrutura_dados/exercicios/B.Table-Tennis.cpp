@@ -23,6 +23,6 @@ int main()
             wins++;
         j = (j + 1) % person;    
     }
-    cout << i;    
+    cout << v[i];    
 
 }
