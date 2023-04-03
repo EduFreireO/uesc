@@ -13,15 +13,16 @@ int main()
     int wins = 0, i = 0, j = 1;
     while(wins != streak)
     {
+        
         if(v[j] > v[i])
         {
             i = j;
             wins = 0;
         }
-        else
+        else if(i != j)
             wins++;
         j = (j + 1) % person;    
     }
-    cin >> i;    
+    cout << i;    
 
 }
