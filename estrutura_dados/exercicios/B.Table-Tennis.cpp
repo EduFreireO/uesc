@@ -12,7 +12,9 @@ int main()
 
     int wins = 0, i = 0, j = 1;
     while(wins != streak)
-    {
+    {   
+        if(i == j)    
+            break;
         
         if(v[j] > v[i])
         {
