@@ -1,19 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-    int person, streak;
+    int person;
+    long wins = 0, streak;
     cin >> person >> streak;
 
     int v[person];
     for(int i = 0; i < person; i++)
         cin >> v[i];
 
-    int wins = 0, i = 0, j = 1;
+    int i = 0, j = 1;
     while(wins != streak)
-    {
-        
+    {   
+        if(i == j)  
+            break;
         if(v[j] > v[i])
         {
             i = j;
@@ -23,6 +24,5 @@ int main()
             wins++;
         j = (j + 1) % person;    
     }
-    cout << v[i];    
-
+    cout << v[i] << endl;        
 }
