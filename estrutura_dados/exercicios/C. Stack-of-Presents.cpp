@@ -3,32 +3,26 @@ using namespace std;
 
 int main()
 {
-    
-    
-    int presents, queue; 
-    cin >> presents >> queue;
-    
-    int stack[presents], q[queue];
+    int len_stack, len_queue, aux;
+    list <int> presents;
+    set <int> s;
 
-    for(int i = 0; i < presents; i++)
-        cin >> stack[i];
-    for(int i = 0; i < queue; i++)
-        cin >> q[i];
-
+    cin >> len_stack >> len_queue;
     
-    int top = 0, x, front = 0, time = 0;
-    while(queue)
+    while(len_stack--)
     {
-        if(stack[top] == q[front])
-        {
-            time++;
-            top++;
-            front++;
-        }
+        cin >> aux;
+        presents.push_back(aux);
+    }
+    
+    while(len_queue--)
+    {
+        cin >> aux;
+        s.insert(aux);
+    }
 
-
-
-    }    
+    
 
 
 }
+
