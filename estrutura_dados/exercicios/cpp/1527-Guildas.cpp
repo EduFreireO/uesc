@@ -2,32 +2,38 @@
 #define MAX 100001
 using namespace std;
 
-pair <int, int> v[MAX];
-
-int find(int a)
+int  h[MAX];
+pair <int, int> parent[MAX];
+int FindSet(int x)
 {
-    if (v[a].first == a)
-        return a;
-    return find(v[a].first);    
+    if(FindSet(x) == x)
+        return x;
+    return parent[x].first = FindSet( parent[x].first );    
 }
 
-void join(int a, int b)
+void Join(int x, int y)
 {
-    
+    int ParentX = FindSet(x), ParentY = FindSet(y);
+    if(ParentX == ParentY)
+        return;
+
+    if(h[ParentX] > h[ParentY])
+    {    
+        parent[ParentX]
+        parent[ParentY].first = ParentX;
+    }
+    else if(h[ParentX] == h[ParentY])
+    {
+        parent[ParentY] = ParentX;
+        h[ParentX] += 1;
+    }
+    else
+        parent[ParentX]  = ParentY;       
+
 }
 
 
 int main()
 {
-    int players, operations;
     
-    
-    for(int i = 1; i <= players; i++)
-    {
-        v -> first = i;
-        v -> second = i;
-    }
-
-    
-
 }
