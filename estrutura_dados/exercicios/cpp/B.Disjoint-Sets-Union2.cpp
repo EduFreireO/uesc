@@ -3,8 +3,8 @@
 using namespace std;
 int parent[MAX], sum[MAX];
 int Max[MAX], Min[MAX];
-
 int r[MAX];
+
 int FindP(int x)
 {
     if(parent[x] == x)
