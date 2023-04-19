@@ -1,26 +1,23 @@
 #include <bits/stdc++.h>
-
-
 using namespace std;
+
+int alg(vector <int> &coins, int x)
+{
+    int value[coins.size()];
+    value[]
+    for
+}
+
 
 int main()
 {
-    int c[] = {1, 5, 10, 20, 100};
-   // TLE ? 
-    map <long  int,long  int> m;
-    m[1] = 1;
-    int budget;
-    cin >> budget;
-    for(long int i = 2; i <= budget; i++)
-    {
-        m[i] = INT_MAX;
-        for(int coin: c)
-        {
-            if(coin > i)
-                break;
-            m[i] = min(m[i], m[i - coin] + 1);     
-        }
-    }
-    cout << m[budget] << endl;
+    int numberCoins, change;
+    cin >> numberCoins >> change;
 
+    vector <int> coins(numberCoins);
+    for(int i = 0; i < numberCoins; i++)
+        cin >> coins[i];
+
+
+    
 }
